@@ -1,4 +1,4 @@
-name: Website Deployment
+name: Continue on error Website Deployment
 on:
   push:
     branches:
@@ -38,9 +38,9 @@ jobs:
           path: node_modules
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'  # if the cache file is hitted then this workflow will be skipped 
         run: npm ci
       - name: Test code
+        continue-on-error: true  #now this workflow will execute even we have error in this workflow
         id: run-test
         run: npm run test
       - name: Upload test report
