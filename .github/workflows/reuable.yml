@@ -4,9 +4,9 @@ on:
     inputs:
       artifact-name:  
         description: The name of the deployed artifact file
-        type: string
         required: false #if the input value is not present still the workflow will run with defalut value
         default: dist
+        type:  string
 jobs:
   Reusbale:
     runs-on: ubuntu-latest
