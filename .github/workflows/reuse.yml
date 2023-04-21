@@ -75,8 +75,7 @@ jobs:
   deploy:
     needs: build
     uses: ./.github/workflows/reuable.yml
-    with:
-      artifact-name: dist-files      # we are passing this file name to reusable workflow as a input 
+     # we are passing this file name to reusable workflow as a input 
   
   reject-data:
     if: failure()
