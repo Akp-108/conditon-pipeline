@@ -22,6 +22,8 @@ jobs:
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'ture'
         run: npm ci
+      - name: cache found
+        run: echo we are able to access the cache data
       - name: Lint code
         run: npm run lint
   test:
