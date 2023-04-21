@@ -2,7 +2,7 @@ name: matrix demo
 on: push
 jobs:
   build:
-    # continue-on-error: true
+    continue-on-error: true
     strategy:  # this will execute our jon on the basis of matrix
       matrix:
         node-version: [12, 14, 16]
