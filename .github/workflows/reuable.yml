@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: Get code  
         run: actions/download-artifact@v3
-        with:
-          name : ${{ inputs.artifact-name }}  # we are taking the input value from dynamic manner
+        # with:
+        #   name : ${{ inputs.artifact-name }}  # we are taking the input value from dynamic manner
       - name: List file
         run: ls
       - name: Download-Upload
